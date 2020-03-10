@@ -1,0 +1,4 @@
+module qvtkmodule
+plugin qvtkmodule ../
+
+depends QtQuick 2.12
