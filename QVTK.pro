@@ -1,16 +1,12 @@
-TEMPLATE = lib
-TARGET = qvtkmodule
+TARGET = qvtk
 QT += qml quick widgets
-CONFIG += plugin
-
+uri = qvtk
 
 DEFINES += QVTK_LIB
 
-uri = qvtk
-
-
 RESOURCES += \
     src/qvtk.qrc
+
 INCLUDEPATH += $$PWD/src
 
 INCLUDEPATH += $$PWD/src/Math
@@ -26,7 +22,6 @@ INCLUDEPATH += $$PWD/src/Vtk/Wrapper
 include($$PROJECT_PATH/module.pri)
 
 include(vtk.pri)
-
 
 !equals(_PRO_FILE_PWD_, $$OUT_PWD) {
     copy_qmldir.target = $$OUT_PWD/qmldir
@@ -138,7 +133,6 @@ HEADERS += \
     src/Vtk/Wrapper/quickVtkWarpScalar.hpp \
     src/Vtk/Wrapper/quickVtkWarpTo.hpp \
     src/qvtk_plugin.h
-
 SOURCES += \
     src/Math/quickMathVector2.cpp \
     src/Math/quickMathVector3.cpp \

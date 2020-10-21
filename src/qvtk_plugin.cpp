@@ -92,6 +92,7 @@
 #include <quickVtkProperty.hpp>
 #include <quickVtkVolume.hpp>
 #include <quickVtkActor2D.hpp>
+#include <quickVtkCylinderSource.hpp>
 
 
 using namespace quick;
@@ -193,17 +194,14 @@ void QVTKPlugin::registerTypes(const char *uri){
     qmlRegisterType<Glyph3D>(uri, 1, 0, "Glyph3D");
     qmlRegisterType<TubeFilter>(uri, 1, 0, "TubeFilter");
     qmlRegisterType<PolyDataMapper>(uri, 1, 0, "PolyDataMapper");
+    qmlRegisterType<CylinderSource>(uri, 1, 0, "CylinderSource");
 
 
 }
 
-
-
-void QVTKPlugin::initializeEngine(QQmlEngine *engine, const char *){
-    engine->addImportPath("qrc:///");
-
-
-
+QVTKPlugin::QVTKPlugin()
+{
 
 }
+
 

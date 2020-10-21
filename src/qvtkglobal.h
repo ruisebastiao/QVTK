@@ -14,27 +14,19 @@
 **
 ****************************************************************************/
 
-#ifndef AUTOMATIONMODULE_PLUGIN_H
-#define AUTOMATIONMODULE_PLUGIN_H
+#ifndef QVTKGLOBAL_H
+#define QVTKGLOBAL_H
 
-#include <QQmlExtensionPlugin>
+#include <qglobal.h>
 
+#ifndef QVTK_STATIC
+#  ifdef QVTK_LIB
+#    define QVTK_EXPORT Q_DECL_EXPORT
+#  else
+#    define QVTK_EXPORT Q_DECL_IMPORT
+#  endif
+#else
+#  define QVTK_EXPORT
+#endif
 
-#include "qvtkglobal.h"
-
-
-
-class QVTK_EXPORT  QVTKPlugin : public QQmlExtensionPlugin{
-
-    Q_OBJECT
-
-public:
-    void registerTypes(const char *uri) Q_DECL_OVERRIDE ;
-
-    QVTKPlugin();
-
-};
-
-//Q_DECLARE_METATYPE(ProxyNodeInfo)
-
-#endif // AUTOMATIONMODULE_PLUGIN_H
+#endif // QVTKGLOBAL_H
